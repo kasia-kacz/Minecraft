@@ -12,8 +12,6 @@ import org.bukkit.util.noise.CombinedNoiseGenerator;
 import org.bukkit.util.noise.OctaveGenerator;
 import org.bukkit.util.noise.PerlinOctaveGenerator;
 
-//Inlcuye estas sentencias 'import' en tu World.java
-
 	import java.util.Collection;
 	import java.util.Iterator;
 	import java.util.Set;
@@ -24,7 +22,6 @@ import org.bukkit.util.noise.PerlinOctaveGenerator;
 	import model.exceptions.BadLocationException;
 	import model.exceptions.StackSizeException;
 	import model.exceptions.WrongMaterialException;
-
 
 /**
  * Class world represents the world where player can move, select items, etc.
