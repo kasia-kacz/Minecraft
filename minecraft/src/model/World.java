@@ -33,7 +33,6 @@ import org.bukkit.util.noise.PerlinOctaveGenerator;
  *
  */
 public class World {
-
 	/**
 	 * name of the world
 	 */
