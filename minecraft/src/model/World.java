@@ -42,17 +42,14 @@ public class World {
      * Size of the world in the (x,z) plane.
      */
     private int worldSize;
-  
     /**
      * World seed for procedural world generation
      */
 	private long seed;
-
     /**
      * blocks on the world map
      */
     private Map<Location, Block> blocks;	
-    
 	/**
 	 * Items deposited somewhere in this world.
 	 */ 
@@ -65,8 +62,6 @@ public class World {
      * Player
      */
     private Player player;
-
-    
     /** This internal class represents a two-dimensional height map
 	 * that will serve us to keep the height of the ground (y-coordinate)
 	 * in a two-dimensional array, and index it with positive or negative 'x' and 'z' values.
@@ -83,13 +78,12 @@ public class World {
 	 * set(-24,24,70)
 	 *
 	 */
-
+    
 	class HeightMap {
 		/**
 		 * heightMap array
 		 */
 		double[][] heightMap;
-		
 		/**
 		 * positive limit of world
 		 */
@@ -98,7 +92,6 @@ public class World {
     	 * negative limit of world
     	 */
     	int negativeWorldLimit;
-    	
     	/**
     	 * Constructor for height map
     	 * @param worldsize size of world
@@ -108,7 +101,6 @@ public class World {
 			positiveWorldLimit  = worldsize/2;
 			negativeWorldLimit = (worldsize % 2 == 0) ? -(positiveWorldLimit-1) : -positiveWorldLimit;
 		}
-		
 		/**
 		 * obtains the height of the terrain at position (x,z)
 		 * @param x coordinate 'x' between 'positiveWorldLimit' and 'negativeWorldLimit
@@ -126,27 +118,20 @@ public class World {
 		void set(double x, double z, double y) {
 			heightMap[(int)x - negativeWorldLimit][(int)z - negativeWorldLimit] = y;
 		}
-
 	}
-	
-	
 	/**
 	 * Y-coordinates of the world's surface. It is initialized in generate() and must be updated
 	 * every time the player places a new block in an empty position
 	 * You can use it to locate the surface block of your world.
 	 */
-	
 	private HeightMap heightMap;
-	
 	/**
 	 * Constructor used to create a world with specified name.
 	 * @param name The name for new-created world.
 	 */
-	
 	public World(String name) {
 		this.name=name;
 	}
-	
 	/**
 	 * It creates a world of size size*size in the plane (x,z). seed is the seed for the land generator and name the name of the world
 	 * @param s seed
@@ -154,9 +139,7 @@ public class World {
 	 * @param name name of world
 	 * @param playerName name of player
 	 */
-	
 	public World(long s, int size, String name, String playerName) {
-
 		if(size<=0) throw new IllegalArgumentException();
 		this.seed=s;
 		this.worldSize = size;
@@ -168,8 +151,6 @@ public class World {
 		generate(s, size);
 		this.getPlayer().setName(playerName);
 	}
-  
-
 	 /**
      * It generates a new world of size*size in the plane (x,z). If there were previous elements in the world,  
      * will be eliminated. Using the same seed and size we can generate equal worlds
@@ -233,7 +214,6 @@ public class World {
 							e.printStackTrace();
 						}
 	    	    	}
-
 	    		}
 	    	}
 	    	
@@ -281,7 +261,6 @@ public class World {
 	    					e.printStackTrace();
 	    				}
 	    			}
-
 	    		}
 	    	}
 	    	System.out.println();
@@ -521,40 +500,18 @@ public class World {
 			return neighborhood;
 		}
 
-
-   
-   /**
-    * Trivial getter
-    * @return world size
-    */
-
    public int getSize() {
 	   return this.worldSize;
    }
-   
-   /**
-    * Trivial getter
-    * @return world seed
-    */
-   
+
    public long getSeed() {
 	   return this.seed;
    }
-   
-   /**
-    * Trivial getter
-    * @return world name
-    */
-   
+
    public String getName() {
 	   return this.name;
    }
-   
-   /**
-    * Trivial getter
-    * @return player in this world
-    */
-   
+
    public Player getPlayer() {
 	   return this.player;
    }
