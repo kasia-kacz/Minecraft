@@ -117,13 +117,8 @@ public final class Main4_ranking {
 		System.out.println(game.showPlayerInfo(player));
 		
 		return world;
-
 	}
 	
-	/**
-	 * Main method
-	 * @param args command line arguments
-	 */
 	public static void main(String args[]) {
 		Ranking<CollectedItemsScore> itemsRanking = new Ranking<>();
 		Ranking<MiningScore> miningRanking = new Ranking<>();
@@ -180,6 +175,4 @@ public final class Main4_ranking {
 			e.printStackTrace();
 		}
 	}
-	
-	
 }
