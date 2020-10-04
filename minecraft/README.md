@@ -1,1 +1,1 @@
-### Proyecto Eclipse base para las prácticas de 'Programación 3', curso 2019-2020
+### Project "minecraft"is simplified version of game Minecraft implemented in java 

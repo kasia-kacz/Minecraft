@@ -17,13 +17,11 @@ public abstract class Block {
 	 * Abstract method. Its objective is to return a copy of the object ‘this’ when invoked .
 	 */
 	public abstract Block clone();
-	
 	/**
 	 * Constructor. It creates a block of the type of material provided as a parameter.
 	 * @param t type of block
 	 * @throws WrongMaterialException if the material is not a block material
 	 */
-	
 	Block(Material t) throws WrongMaterialException{
 
 		if(t.isBlock())
@@ -35,18 +33,9 @@ public abstract class Block {
 		}
 	}
 	
-	/**
-	 * Copy constructor
-	 * @param b block to copy
-	 */
 	protected Block(Block b){
 		this.type=b.type;
 	}
-	
-	/**
-	 * Trivial getter
-	 * @return type of block
-	 */
 	
 	public Material getType() {
 		return this.type;
